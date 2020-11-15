@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+ 
+{% block title %}Editar Producto{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4>Django CRUD con Tabla de Bootstrap</h4>  
+ <form method="POST" class="post-form" action="/update/{{productos.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Actualiza los detalles</h3>  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Nombre:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="nombre" id="id_nombre" required maxlength="20" value="{{ productos.nombre}}"/>  
+  </div>  
+   </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Precio:</label>  
+  <div class="col-sm-4">  
+   <input type="number" step="any" class="form-control" name="precio" id="id_precio" required maxlength="100" value="{{ productos.precio }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Existencia:</label>  
+  <div class="col-sm-4">  
+   <input type="number" class="form-control" name="existencia" id="id_existencia" required maxlength="254" value="{{ productos.existencia }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Descripcion:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="descripcion" id="id_descripcion" required maxlength="15" value="{{ productos.descripcion }}" />  
+  </div>  
+   </div>   
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-success btn-lg">Actualizar</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+{% endblock content %}   
