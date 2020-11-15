@@ -38,3 +38,8 @@ def update(request, id):
         form.save()  
         return redirect("/")  
     return render(request, 'edit.html', {'productos': productos})  
+
+def destroy(request, id):  
+    productos = Producto.objects.get(id=id)  
+    productos.delete()  
+    return redirect("/")  
